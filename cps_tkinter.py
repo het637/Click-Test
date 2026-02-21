@@ -31,6 +31,9 @@ def countdown(valeur):
         timer_label.config(text="Temps écoulé !")
         cps = compteur / duree_jeu  
         showinfo("Résultat", f"Votre score : {compteur} clics\nCPS : {cps:.2f}") # Retourne notre score
+        if cps > 15:
+            showinfo("Easter Egg","Bravo, vous faites partie des meilleurs cliqueurs, pour vous féliciter, je vais vous rediriger vers cette magnifique page internet")
+            webbrowser.open("https://www.leroymerlin.fr/produits/salle-de-bains/douche/")
         start_button.config(state=NORMAL) # Re-autorise l'utilisateur à appuyer sur le bouton "commencer"
 
 
@@ -107,3 +110,4 @@ menu_aide.add_command(label="Explications du programme", command=alert) # Option
 fenetre.config(menu=menubar)
 
 fenetre.mainloop()
+
